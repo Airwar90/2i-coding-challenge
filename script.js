@@ -1,22 +1,17 @@
-//initialize array to store numbers
-var numbers = [];
-var numbersUnique = [];
-let numbersPicked = [55, 32, 68, 55, 13, 55, 96, 55, 32, 13];
-randomizeNumbers(numbers);
-console.log(numbers);
-numbersUnique = checkForDuplicates(numbersPicked);
-console.log(numbersPicked);
-console.log(numbersUnique);
+//initialize the array that will store the numbers
+var numbers = []; 
+//tries the functions with a selection that has duplicates
+let pickedArr = [12, 55, 45, 12, 55, 45, 68, 2, 68, 2];
+numberSort(pickedArr);
 
-descendingOrder(numbersPicked);
 //function to select 10 random numbers in range
-function randomizeNumbers(arr) {
-
+function randomizeNumbers() {
     for (let i=0; i<10; i++) {
         let num = Math.floor(Math.random() * 100);
-        arr.push(num);
+        numbers.push(num);
     }
-
+    //checks for duplicates in the selection
+    numberSort(numbers)
 }
 
 //function to check for duplicates values in an array
@@ -32,7 +27,6 @@ function checkForDuplicates(arr) {
     // returns the new selection with no duplicates
     return newArr; 
 }
-
 //function to return the max value in a array and strips it from array
 function arrmin(arr) {
     let max = arr[0];
@@ -56,4 +50,9 @@ function descendingOrder(arr) {
         sortedArr.push(arrmin(arr));
     }
     console.log(sortedArr);
+}
+//final function that provides a sorted array in descending order without duplicates
+function numberSort(arr) {
+    arr = checkForDuplicates(arr);
+    descendingOrder(arr);
 }
