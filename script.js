@@ -7,8 +7,8 @@ console.log(numbers);
 numbersUnique = checkForDuplicates(numbersPicked);
 console.log(numbersPicked);
 console.log(numbersUnique);
-
-
+arrmin(numbersPicked);
+console.log(numbersPicked);
 //function to select 10 random numbers in range
 function randomizeNumbers(arr) {
 
@@ -31,4 +31,18 @@ function checkForDuplicates(arr) {
     }
     // returns the new selection with no duplicates
     return newArr; 
+}
+
+//function to return the max value in a array and strips it from array
+function arrmin(arr) {
+    let max = arr[0];
+    let index;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+            index = i;                     
+        }        
+    }
+    arr.splice(index, 1);   
+    return max; 
 }
