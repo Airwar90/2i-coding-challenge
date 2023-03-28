@@ -1,0 +1,22 @@
+div {
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+
+/* added some style to make the buttons easier to look at*/
+button { 
+    background-color: aquamarine;
+    border: none;
+    padding: 10px 25px;
+    flex-wrap: wrap;
+}
+
+button:hover { 
+    background-color: rgb(22, 177, 138);
+
+}
+#reset:hover {
+    background-color: rgb(235, 105, 105);
+}
