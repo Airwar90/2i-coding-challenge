@@ -7,8 +7,8 @@ console.log(numbers);
 numbersUnique = checkForDuplicates(numbersPicked);
 console.log(numbersPicked);
 console.log(numbersUnique);
-arrmin(numbersPicked);
-console.log(numbersPicked);
+
+descendingOrder(numbersPicked);
 //function to select 10 random numbers in range
 function randomizeNumbers(arr) {
 
@@ -45,4 +45,15 @@ function arrmin(arr) {
     }
     arr.splice(index, 1);   
     return max; 
+}
+
+//function to sort the number selection in descending order
+function descendingOrder(arr) {
+    let len = arr.length;
+    let sortedArr = [];
+    for (let i=0; i<len; i++) {
+        //the max value is added to the sorted array at every cycle creating descending order
+        sortedArr.push(arrmin(arr));
+    }
+    console.log(sortedArr);
 }
